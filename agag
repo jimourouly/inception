@@ -1,5 +1,35 @@
-Reading package lists...
-/bin/sh: 1:  apt-get: not found
-The command '/bin/sh -c apt-get update && \ apt-get install -y mariadb-server mariadb-client && rm -rf /var/lib/apt/lists/*' returned a non-zero code: 127
-ERROR: Service 'mariadb' failed to build : Build failed
+Package php7.4-fpm is not available, but is referred to by another package.
+This may mean that the package is missing, has been obsoleted, or
+is only available from another source
+
+E: Package 'php7.4-fpm' has no installation candidate
+E: Unable to locate package php7.4-mysql
+E: Couldn't find any package by glob 'php7.4-mysql'
+E: Couldn't find any package by regex 'php7.4-mysql'
+E: Unable to locate package php7.4-curl
+E: Couldn't find any package by glob 'php7.4-curl'
+E: Couldn't find any package by regex 'php7.4-curl'
+E: Unable to locate package php7.4-gd
+E: Couldn't find any package by glob 'php7.4-gd'
+E: Couldn't find any package by regex 'php7.4-gd'
+E: Unable to locate package php7.4-mbstring
+E: Couldn't find any package by glob 'php7.4-mbstring'
+E: Couldn't find any package by regex 'php7.4-mbstring'
+E: Unable to locate package php7.4-xml
+E: Couldn't find any package by glob 'php7.4-xml'
+E: Couldn't find any package by regex 'php7.4-xml'
+E: Unable to locate package php7.4-xmlrpc
+E: Couldn't find any package by glob 'php7.4-xmlrpc'
+E: Couldn't find any package by regex 'php7.4-xmlrpc'
+E: Unable to locate package php7.4-soap
+E: Couldn't find any package by glob 'php7.4-soap'
+E: Couldn't find any package by regex 'php7.4-soap'
+E: Unable to locate package php7.4-intl
+E: Couldn't find any package by glob 'php7.4-intl'
+E: Couldn't find any package by regex 'php7.4-intl'
+E: Unable to locate package php7.4-zip
+E: Couldn't find any package by glob 'php7.4-zip'
+E: Couldn't find any package by regex 'php7.4-zip'
+The command '/bin/sh -c apt-get update && 	apt-get install -y 	php7.4-fpm 	php7.4-mysql 	php7.4-curl 	php7.4-gd 	php7.4-mbstring 	php7.4-xml 	php7.4-xmlrpc 	php7.4-soap 	php7.4-intl 	php7.4-zip 	wget 	curl mariadb-client && 	rm -rf /var/lib/apt/lists/*' returned a non-zero code: 100
+ERROR: Service 'wordpress' failed to build : Build failed
 make: *** [Makefile:8: build] Error 1
