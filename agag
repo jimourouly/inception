@@ -1,10 +1,47 @@
-debian-user@debian:~/inception$ whoami
-debian-user
-debian-user@debian:~/inception$ pwd
-/home/debian-user/inception
-debian-user@debian:~/inception$ ls -la /home/
-total 16
-drwxr-xr-x  4 root        root        4096 Jan  6 18:12 .
-drwxr-xr-x 19 root        root        4096 Jan  6 15:05 ..
-drwx------ 17 debian-user debian-user 4096 Jan  7 19:39 debian-user
-drwxr-xr-x  3 root        root        4096 Jan  6 18:12 jroulet
+debian-user@debian:~/inception$ cat -A Makefile 
+COMPOSE_FILE = srcs/Docker-compose.yml$
+DATA_PATH = /home/jroulet/data$
+$
+all:build up$
+ $
+build:$
+^I@echo "Building Docker images..."$
+^Idocker-compose -f $(COMPOSE_FILE) build$
+$
+up:$
+^I@echo "Starting containers..."$
+^Imkdir -p $(DATA_PATH)/mariadb$
+^Imdkir -p $(DATA_PATH)/wordpress$
+^Idocker-compose -f $(COMPOSE_FILE) up -d$
+$
+down:$
+^I@echo "Stopping containers..."$
+^Idocker-compose -f $(COMPOSE_FILE) down$
+$
+start:$
+^I@echo "Starting containers..."$
+^Idocker-compose -f $(COMPOSE_FILE) start$
+$
+stop:$
+^I@echo "Stopping containers..."$
+^Idockcer-compose -f $(COMPOSE_FILE) stop$
+$
+restart: stop start$
+$
+logs: docker-compose -f $(COMPOSE_FILE) logs -f$
+$
+ps: docker-compose -f $(COMPOSE_FILE) ps$
+$
+clean: down$
+^I@echo "cleanning containers and images..."$
+^Idocker system prune -af$
+$
+fclean: clean$
+^I@echo "removung volumes..."$
+^Idocker volume rm srcs_mariadb_data srcs_wordpress_data 2>/dev/null || true$
+^I@sudo rm -rf $(DATA_PATH)/mariadb/*$
+^I@sudo rm -rf $(DATA_PATH)/wordpress/*$
+$
+re: fclean all$
+$
+.PHONY: all build up down start stop restart logs ps clean fclean re$
