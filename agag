@@ -1,9 +1,52 @@
-debian-user@debian:~/inception$ docker ps
-CONTAINER ID   IMAGE       COMMAND                  CREATED         STATUS                          PORTS      NAMES
-e7228b12899f   nginx       "/bin/bash -c '/usr/…"   2 minutes ago   Restarting (1) 30 seconds ago              nginx
-bafc7726bd34   wordpress   "/usr/local/bin/inst…"   2 minutes ago   Restarting (2) 30 seconds ago              wordpress
-2d80040fa31d   mariadb     "/usr/local/bin/init…"   2 minutes ago   Up 2 minutes (healthy)          3306/tcp   mariadb
-debian-user@debian:~/inception$ make logs
-make: *** No rule to make target 'docker-compose', needed by 'logs'.  Stop.
+debian-user@debian:~/inception$ docker logs nginx
+Generating SSL certificates...
+...+.+.........+...+..+.+...+..+.......+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*.+......+.....+.+..+......+....+..+.+..+......+.+...+...+...+..............+...+....+.....+....+..............+.+..+...+....+..+.+..+.+......+........+......+.+.....+.............+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*.............+......+.........+...+.................+....+..............+.+..+.............+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+.+...+.....+....+...+..+.+.....+..........+..............+.........+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*......+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*.+....................+.+...+...+.....+....+.....+.+..............+.............+....................+..........+..+....+..........................+.+..+...+...............+...............+............+......+.......+...+..+...+......+...................+......+...+..+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+-----
+SSL certificate generated.
+2026/01/07 19:07:08 [emerg] 1#1: unknown directive "listen[::]:443" in /etc/nginx/nginx.conf:11
+2026/01/07 19:07:09 [emerg] 1#1: unknown directive "listen[::]:443" in /etc/nginx/nginx.conf:11
+2026/01/07 19:07:10 [emerg] 1#1: unknown directive "listen[::]:443" in /etc/nginx/nginx.conf:11
+2026/01/07 19:07:11 [emerg] 1#1: unknown directive "listen[::]:443" in /etc/nginx/nginx.conf:11
+2026/01/07 19:07:12 [emerg] 1#1: unknown directive "listen[::]:443" in /etc/nginx/nginx.conf:11
+2026/01/07 19:07:14 [emerg] 1#1: unknown directive "listen[::]:443" in /etc/nginx/nginx.conf:11
+2026/01/07 19:07:17 [emerg] 1#1: unknown directive "listen[::]:443" in /etc/nginx/nginx.conf:11
+2026/01/07 19:07:24 [emerg] 1#1: unknown directive "listen[::]:443" in /etc/nginx/nginx.conf:11
+2026/01/07 19:07:37 [emerg] 1#1: unknown directive "listen[::]:443" in /etc/nginx/nginx.conf:11
+2026/01/07 19:08:03 [emerg] 1#1: unknown directive "listen[::]:443" in /etc/nginx/nginx.conf:11
+2026/01/07 19:08:54 [emerg] 1#1: unknown directive "listen[::]:443" in /etc/nginx/nginx.conf:11
+2026/01/07 19:09:55 [emerg] 1#1: unknown directive "listen[::]:443" in /etc/nginx/nginx.conf:11
+2026/01/07 19:10:55 [emerg] 1#1: unknown directive "listen[::]:443" in /etc/nginx/nginx.conf:11
+2026/01/07 19:11:56 [emerg] 1#1: unknown directive "listen[::]:443" in /etc/nginx/nginx.conf:11
 debian-user@debian:~/inception$ 
-
+debian-user@debian:~/inception$ docker logs wordpress
+/usr/local/bin/install-wordpress.sh: line 3: WP_ADMIN-USER=jroulet_admin: command not found
+/usr/local/bin/install-wordpress.sh: line 43: unexpected EOF while looking for matching `"'
+/usr/local/bin/install-wordpress.sh: line 3: WP_ADMIN-USER=jroulet_admin: command not found
+/usr/local/bin/install-wordpress.sh: line 43: unexpected EOF while looking for matching `"'
+/usr/local/bin/install-wordpress.sh: line 3: WP_ADMIN-USER=jroulet_admin: command not found
+/usr/local/bin/install-wordpress.sh: line 43: unexpected EOF while looking for matching `"'
+/usr/local/bin/install-wordpress.sh: line 3: WP_ADMIN-USER=jroulet_admin: command not found
+/usr/local/bin/install-wordpress.sh: line 43: unexpected EOF while looking for matching `"'
+/usr/local/bin/install-wordpress.sh: line 3: WP_ADMIN-USER=jroulet_admin: command not found
+/usr/local/bin/install-wordpress.sh: line 43: unexpected EOF while looking for matching `"'
+/usr/local/bin/install-wordpress.sh: line 3: WP_ADMIN-USER=jroulet_admin: command not found
+/usr/local/bin/install-wordpress.sh: line 43: unexpected EOF while looking for matching `"'
+/usr/local/bin/install-wordpress.sh: line 3: WP_ADMIN-USER=jroulet_admin: command not found
+/usr/local/bin/install-wordpress.sh: line 43: unexpected EOF while looking for matching `"'
+/usr/local/bin/install-wordpress.sh: line 3: WP_ADMIN-USER=jroulet_admin: command not found
+/usr/local/bin/install-wordpress.sh: line 43: unexpected EOF while looking for matching `"'
+/usr/local/bin/install-wordpress.sh: line 3: WP_ADMIN-USER=jroulet_admin: command not found
+/usr/local/bin/install-wordpress.sh: line 43: unexpected EOF while looking for matching `"'
+/usr/local/bin/install-wordpress.sh: line 3: WP_ADMIN-USER=jroulet_admin: command not found
+/usr/local/bin/install-wordpress.sh: line 43: unexpected EOF while looking for matching `"'
+/usr/local/bin/install-wordpress.sh: line 3: WP_ADMIN-USER=jroulet_admin: command not found
+/usr/local/bin/install-wordpress.sh: line 43: unexpected EOF while looking for matching `"'
+/usr/local/bin/install-wordpress.sh: line 3: WP_ADMIN-USER=jroulet_admin: command not found
+/usr/local/bin/install-wordpress.sh: line 43: unexpected EOF while looking for matching `"'
+/usr/local/bin/install-wordpress.sh: line 3: WP_ADMIN-USER=jroulet_admin: command not found
+/usr/local/bin/install-wordpress.sh: line 43: unexpected EOF while looking for matching `"'
+/usr/local/bin/install-wordpress.sh: line 3: WP_ADMIN-USER=jroulet_admin: command not found
+/usr/local/bin/install-wordpress.sh: line 43: unexpected EOF while looking for matching `"'
+/usr/local/bin/install-wordpress.sh: line 3: WP_ADMIN-USER=jroulet_admin: command not found
+/usr/local/bin/install-wordpress.sh: line 43: unexpected EOF while looking for matching `"'
