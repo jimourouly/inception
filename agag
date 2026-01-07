@@ -1,0 +1,5 @@
+Reading package lists...
+/bin/sh: 1:  apt-get: not found
+The command '/bin/sh -c apt-get update && \ apt-get install -y mariadb-server mariadb-client && rm -rf /var/lib/apt/lists/*' returned a non-zero code: 127
+ERROR: Service 'mariadb' failed to build : Build failed
+make: *** [Makefile:8: build] Error 1
