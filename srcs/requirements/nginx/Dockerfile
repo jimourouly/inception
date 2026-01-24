@@ -1,4 +1,4 @@
-FROM Debian:12
+FROM debian:12
 
 #install nginx and openssl
 

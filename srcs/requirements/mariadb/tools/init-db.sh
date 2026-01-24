@@ -14,7 +14,7 @@ ALTER USER 'root'@'localhost' IDENTIFIED BY '${DB_ROOT_PASSWORD}';
 CREATE DATABASE IF NOT EXISTS ${MYSQL_DATABASE};
 CREATE USER IF NOT EXISTS '${MYSQL_USER}'@'%' IDENTIFIED BY '${DB_PASSWORD}';
 GRANT ALL PRIVILEGES ON ${MYSQL_DATABASE}.* TO '{MYSQL_USER}'@'%';
-FLUS PRIVILEGES;
+FLUSH PRIVILEGES;
 EOSQL
 
 	echo "Mariadb init succesfully"
@@ -22,4 +22,4 @@ fi
 
 #execmariab
 
-exec mysqld --user=mysql --bind-adress=0.0.0.0
+exec mysqld --user=mysql --bind-address=0.0.0.0
