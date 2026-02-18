@@ -1,6 +1,7 @@
 #!/bin/bash
 
 WP_ADMIN_USER=$(grep WORDPRESS_ADMIN_USER /run/secrets/credentials | cut -d'=' -f2)
+WP_USER2_PASSWORD=$(grep WORDPRESS_USER2_PASSWORD /run/secrets/credentials | cut -d'=' -f2)
 WP_ADMIN_PASSWORD=$(grep WORDPRESS_ADMIN_PASSWORD /run/secrets/credentials | cut -d'=' -f2)
 WP_ADMIN_EMAIL=$(grep WORDPRESS_ADMIN_EMAIL /run/secrets/credentials | cut -d'=' -f2)
 DB_PASSWORD=$(cat /run/secrets/db_password)
@@ -37,7 +38,7 @@ if [ ! -f wp-config.php ]; then
 
 	wp user create wpuser2 user2@student.42.fr \
 		--role=author \
-		--user_pass="User2Pass123." \
+		--user_pass="${WP_USER2_PASSWORD}" \
 		--allow-root
 
 	echo "Wordpress installed successfully!"

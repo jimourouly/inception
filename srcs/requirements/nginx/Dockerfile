@@ -2,7 +2,7 @@ FROM debian:12
 
 #install nginx and openssl
 
-RUN apt-get update && \ apt-get install -y nginx openssl && \ rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y nginx openssl && rm -rf /var/lib/apt/lists/*
 
 #create certificate ssl folder
 RUN mkdir -p /etc/nginx/ssl

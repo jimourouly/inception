@@ -7,7 +7,7 @@ DB_PASSWORD=$(cat /run/secrets/db_password)
 if [ ! -d "/var/lib/mysql/mysql" ]; then
 	echo "Init MariaDb database..."
 	mysql_install_db --user=mysql --datadir=/var/lib/mysql
-	mysql --user=mysql --bootstrap << EOSQL
+	mysqld --user=mysql --bootstrap << EOSQL
 USE mysql;
 FLUSH PRIVILEGES;
 ALTER USER 'root'@'localhost' IDENTIFIED BY '${DB_ROOT_PASSWORD}';
