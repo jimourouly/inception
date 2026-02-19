@@ -1,0 +1,10 @@
+DOMAIN_NAME=jroulet.42.fr
+
+# MariaDB
+MYSQL_DATABASE=wordpress
+MYSQL_USER=wpuser
+
+# WordPress
+WORDPRESS_DB_HOST=mariadb:3306
+WORDPRESS_DB_NAME=wordpress
+WORDPRESS_DB_USER=wpuser
