@@ -1,37 +1,37 @@
-COMPOSE_FILE = srcs/docker-compose.yml
+COMPOSE_FILE = ./srcs/docker-compose.yml
 DATA_PATH = /home/jroulet/data
 
 all: build up
  
 build:
 	@echo "Building Docker images..."
-	docker-compose -f $(COMPOSE_FILE) build
+	docker compose -f $(COMPOSE_FILE) build
 
 up:
 	@echo "Starting containers..."
 	@mkdir -p $(DATA_PATH)/mariadb
 	@mkdir -p $(DATA_PATH)/wordpress
-	docker-compose -f $(COMPOSE_FILE) up -d
+	docker compose -f $(COMPOSE_FILE) up -d
 
 down:
 	@echo "Stopping containers..."
-	docker-compose -f $(COMPOSE_FILE) down
+	docker compose -f $(COMPOSE_FILE) down
 
 start:
 	@echo "Starting containers..."
-	docker-compose -f $(COMPOSE_FILE) start
+	docker compose -f $(COMPOSE_FILE) start
 
 stop:
 	@echo "Stopping containers..."
-	docker-compose -f $(COMPOSE_FILE) stop
+	docker compose -f $(COMPOSE_FILE) stop
 
 restart: stop start
 
 logs: 
-	docker-compose -f $(COMPOSE_FILE) logs -f
+	docker compose -f $(COMPOSE_FILE) logs -f
 
 ps: 
-	docker-compose -f $(COMPOSE_FILE) ps
+	docker compose -f $(COMPOSE_FILE) ps
 
 clean: down
 	@echo "cleanning containers and images..."
